@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "cu-ecen-aeld/assignment-4-mortuomo",
+  "pipelineDirectory": "assignment-4-mortuomo",
+  "workspaceDirectory": "assignment-4-mortuomo/assignment-4-mortuomo",
+  "repositories": {
+    "cu-ecen-aeld/assignment-4-mortuomo": {
+      "repositoryPath": "assignment-4-mortuomo/assignment-4-mortuomo",
+      "lastRunOn": "08/07/2025 18:31:45 +02:00"
+    }
+  },
+  "lastRunOn": "08/07/2025 18:31:45 +02:00"
+}
