@@ -1,0 +1,34 @@
+#!/bin/sh
+
+function print_usage() {
+    echo -e "$0: load at startup or unload at shutdown scull, faulty and hello kernel modules.\nusage: $0 ( start | stop )" >&2
+}
+
+if [ $# -lt 1 ]
+then
+    print_usage
+    exit 1
+fi
+
+LDD_MODULES_DIR=/lib/modules/$(uname -r)/ldd-modules/
+
+cd $LDD_MODULES_DIR
+
+case $1 in
+    start)
+        scull/scull_load
+        misc-modules/module_load faulty
+        modprobe hello
+        ;;
+    stop)
+        rmmod hello
+        misc-modules/module_unload faulty
+        scull/scull_unload
+        ;;
+    *)
+        print_usage
+        exit 1
+        ;;
+esac
+
+exit 0
